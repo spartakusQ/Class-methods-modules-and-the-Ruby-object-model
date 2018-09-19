@@ -1,9 +1,11 @@
 class TrainStation
   attr_reader :station_name, :trains
+  @@station_name = []
 
   def initialize(station_name)
     @station_name = station_name
     @trains = []
+    @@station_name << self
     puts "Создана станция #{station_name}"
   end
 
@@ -27,5 +29,9 @@ class TrainStation
       puts "Поезда на станции #{station_name}: "
       trains.each{|train| puts train.number}
     end
+  end
+
+  def self.all_station
+    @@station_name
   end
 end
