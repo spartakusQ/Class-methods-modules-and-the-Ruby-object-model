@@ -1,4 +1,5 @@
 class TrainStation
+  include InstanceCounter
   attr_reader :station_name, :trains
   @@station_name = []
 
@@ -6,6 +7,7 @@ class TrainStation
     @station_name = station_name
     @trains = []
     @@station_name << self
+    register_instance
     puts "Создана станция #{station_name}"
   end
 

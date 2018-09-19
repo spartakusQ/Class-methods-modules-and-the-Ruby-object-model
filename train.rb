@@ -1,4 +1,5 @@
 class Train
+  include InstanceCounter
   include CompanyName
   attr_accessor :number, :route, :station
 
@@ -7,6 +8,7 @@ class Train
     @carriage = []
     @speed = 0
     @@trains[number] = self
+    register_instance
     puts "Создан поезд с номером #{number}. Количество вагонов: #{@carriage}."
   end
 
