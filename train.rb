@@ -1,4 +1,5 @@
 class Train
+  include CompanyName
   attr_accessor :number, :route, :station
 
   def initialize(number)
