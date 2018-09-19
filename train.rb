@@ -6,6 +6,7 @@ class Train
     @number = number
     @carriage = []
     @speed = 0
+    @@trains[number] = self
     puts "Создан поезд с номером #{number}. Количество вагонов: #{@carriage}."
   end
 
@@ -74,5 +75,9 @@ class Train
       puts "Предыдущая станция - #{route.stations[station_index - 1].station_name}." if station_index != 0
       puts "Следующая - #{route.stations[station_index + 1].station_name}." if station_index != route.stations.size - 1
     end
+  end
+
+  def self.find(number)
+    @@trains[number]
   end
 end
