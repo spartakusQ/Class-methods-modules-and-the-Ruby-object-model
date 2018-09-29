@@ -1,4 +1,4 @@
-#класс грузового вагона, родительским является класс вагон
+# blah
 class CargoCarriage < Carriage
   def initialize
     super(:cargo)
